@@ -28,7 +28,6 @@ function ChatWindow({ selectedContact, messages, onSendMessage, onSelectContact 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        // Clear the selected contact
         onSelectContact(null)
       }
     }
@@ -53,7 +52,7 @@ function ChatWindow({ selectedContact, messages, onSendMessage, onSelectContact 
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
-  }, [messages, messagesEndRef]) //Corrected dependency and added messages to dependency array
+  }, [messagesEndRef])
 
   return (
     <div className="flex-1 flex flex-col">

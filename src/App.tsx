@@ -152,7 +152,12 @@ function App() {
   return (
     <div className="flex h-screen bg-gray-100">
       <ContactList contacts={contacts} onSelectContact={setSelectedContact} selectedContact={selectedContact} />
-      <ChatWindow selectedContact={selectedContact} messages={messages} onSendMessage={sendMessage} />
+      <ChatWindow
+        selectedContact={selectedContact}
+        messages={messages}
+        onSendMessage={sendMessage}
+        onSelectContact={setSelectedContact}
+      />
     </div>
   )
 }
